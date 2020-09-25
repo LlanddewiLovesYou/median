@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Roboto";
+  margin-top: 20px;
+  align-items: center;
+  &__title {
+    font-family: "DM Serif Display";
+    font-size: 30px;
+    margin-left: 125px;
+  }
+  &__login {
+    margin-right: 125px;
+    .button {
+      color: black;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  }
+}

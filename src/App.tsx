@@ -1,9 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Masthead } from "components/Masthead/Masthead";
 import "./App.css";
 
 function App() {
-  return <div className="App">Median</div>;
+  return (
+    <div className="App">
+      <Masthead />
+    </div>
+  );
 }
 
 export default App;

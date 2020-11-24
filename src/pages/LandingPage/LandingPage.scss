@@ -1,0 +1,21 @@
+.landing-page {
+  font-family: "DM Serif Display";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  &__content {
+    margin-top: 100px;
+  }
+  .header {
+    font-size: 70px;
+    width: 800px;
+  }
+  .sub-header {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  .button {
+    margin: 20px;
+  }
+}

@@ -1,0 +1,31 @@
+@import "colors.scss";
+
+.post {
+  font-style: unset;
+  color: black;
+  font-family: "Castoro";
+  font-weight: 500;
+  margin: 0 20%;
+  margin-top: 42px;
+  h1 {
+    font-size: 40px;
+    font-weight: 500;
+    margin: 10px 0px;
+  }
+  h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 300;
+    color: $gray-1;
+    font-family: "Roboto";
+  }
+
+  p {
+    font-size: 21px;
+    color: $gray-2;
+    margin: 42px 0;
+  }
+  img {
+    width: 100%;
+  }
+}

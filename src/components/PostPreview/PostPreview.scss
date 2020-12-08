@@ -3,11 +3,13 @@
 .post-preview {
   font-family: Times, "Times New Roman", serif;
   font-style: unset;
+  text-decoration: none;
   font-family: "Roboto";
   width: 675px;
   display: flex;
+  color: black;
+  justify-content: space-between;
   h1 {
-    // font-family: "Castoro";
     font-size: 22px;
     margin: 4px 0;
   }
@@ -38,5 +40,6 @@
   }
   img {
     width: 200px;
+    height: 135px;
   }
 }

@@ -1,0 +1,30 @@
+@import "colors.scss";
+
+.by-line {
+  display: flex;
+  font-family: "Roboto";
+  margin: 30px 0;
+  &__placeholder {
+    color: white;
+    background-color: cornflowerblue;
+    border-radius: 100%;
+    padding: 10px 12px;
+    margin-right: 5px;
+    font-size: 20px;
+  }
+  &__separator {
+    margin: 0px 5px;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    font-size: 14px;
+    justify-content: space-around;
+    &-secondline {
+      display: flex;
+      color: $gray-1;
+    }
+  }
+}

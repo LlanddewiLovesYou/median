@@ -42,10 +42,10 @@ function App() {
       }
     };
     userValidation();
-  });
+  }, [setLoggedIn, setCurrentUser, validateUser, jwt]);
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <UserContext.Provider
           value={{ currentUser, setCurrentUser, setLoggedIn, loggedIn }}

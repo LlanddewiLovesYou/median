@@ -10,9 +10,11 @@ export const LandingPage: React.FC<Props> = (props) => {
     <div className="landing-page">
       <div className="landing-page__content">
         <div className="header">Dive deeper on topics that matter to Ian.</div>
-        <div className="sub-header">Media related to Ian... Median..</div>
+        <div className="sub-header">
+          <u>Med</u>ia related to <u>Ian</u>... <u>Median</u>.
+        </div>
         <Link to="/posts">
-          <Button type="transparent">Get Started</Button>
+          <Button buttonType="transparent">Get Started</Button>
         </Link>
       </div>
     </div>

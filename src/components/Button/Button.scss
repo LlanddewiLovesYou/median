@@ -9,4 +9,11 @@
     color: black;
     border: 1px solid black;
   }
+
+  &__user {
+    color: white;
+    background-color: black;
+    justify-self: center;
+    width: 50%;
+  }
 }

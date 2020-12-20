@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "../Button/Button";
+import { getJWT } from "../../util/jwt";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
 import { convertToRaw } from "draft-js";
@@ -50,7 +51,9 @@ export const CreatePostForm: React.FC<Props> = (props) => {
       wordCount,
     };
 
-    await Axios.post("http://localhost:5000/posts", post);
+    await Axios.post(`${process.env.REACT_APP_API_URL}/posts`, post, {
+      headers: { Authorization: `bearer ${getJWT()}` },
+    });
 
     history.push("/posts");
   };
@@ -90,7 +93,9 @@ export const CreatePostForm: React.FC<Props> = (props) => {
           />
         </div>
       </label>
-      <Button type="submit">Submit</Button>
+      <Button type="submit" buttonType="user">
+        Submit
+      </Button>
     </form>
   );
 };

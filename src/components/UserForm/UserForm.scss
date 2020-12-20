@@ -1,0 +1,33 @@
+.user-form {
+  display: flex;
+  justify-content: center;
+  font-family: "Castoro";
+  font-size: 24px;
+  div {
+    margin: 20px 0;
+    text-decoration: underline;
+  }
+  label {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Martel Sans";
+    font-size: 16px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 4px 2px 4px 3px rgba(223, 223, 226, 1);
+    border-radius: 5px;
+    width: 20%;
+    margin-top: 10%;
+  }
+  input {
+    margin: 10px 0;
+    width: 60%;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+  }
+}

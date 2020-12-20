@@ -22,7 +22,7 @@ export const PostPreview: React.FC<Props> = ({ post }) => {
             <span>{new Date(post.updatedAt).toDateString()}</span>
           ) : null}
           <span className="post-preview__separator">•</span>
-          {post.readTime ? <span>{post.readTime}</span> : null}
+          {post.readTime ? <span>{post.readTime}m</span> : null}
         </div>
       </div>
       <img src={post.imageUrl} alt="" />

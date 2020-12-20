@@ -3,13 +3,15 @@
 .masthead {
   display: flex;
   justify-content: space-between;
-  font-family: "Roboto";
+  font-family: "Martel Sans";
   margin-top: 20px;
   align-items: center;
   &__title {
     font-family: "DM Serif Display";
     font-size: 30px;
     margin-left: 125px;
+    text-decoration: none;
+    color: black;
   }
   &__login {
     margin-right: 125px;
@@ -17,6 +19,16 @@
       color: black;
       text-decoration: none;
       margin: 0 10px;
+      font-weight: 600;
     }
+  }
+  &__link {
+    color: white;
+    background-color: dodgerblue;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 15px;
+    // line-height: 0px;
   }
 }

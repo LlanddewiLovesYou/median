@@ -14,7 +14,7 @@ export const CreatePostPage: React.FC<Props> = () => {
         {postPreview && (
           <div className="preview">
             <span className="prev-text">PREVIEW</span>
-            <Post post={postPreview} className="post"></Post>
+            <Post post={postPreview} />
           </div>
         )}
         <CreatePostForm />

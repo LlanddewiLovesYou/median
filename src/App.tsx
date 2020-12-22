@@ -19,7 +19,6 @@ function App() {
   const [currentUser, setCurrentUser] = useState(undefined);
   const [loggedIn, setLoggedIn] = useState(false);
   const jwt = getJWT();
-  console.log({ currentUser });
 
   const getPosts = useCallback(async () => {
     const allposts = await Axios.get(`${process.env.REACT_APP_API_URL}/posts`);

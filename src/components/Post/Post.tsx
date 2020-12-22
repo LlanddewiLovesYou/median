@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Post as PostType } from "../../types/Post";
 import { ByLine } from "../ByLine/ByLine";
 import { Button } from "../Button/Button";
@@ -15,15 +15,25 @@ interface Props {
 
 export const Post: React.FC<Props> = ({ post }) => {
   const { currentUser } = useContext(UserContext);
+  const [claps, setClaps] = useState(0);
   const isAdmin = isUserAdmin(currentUser);
   const jwt = getJWT();
 
+  useEffect(() => {
+    setClaps(post.claps);
+  }, [post]);
+
   const deletePost = async (e) => {
-    console.log("DELETE POST");
     e.preventDefault();
     await Axios.delete(`${process.env.REACT_APP_API_URL}/posts/${post.id}`, {
       headers: { authorization: `bearer ${jwt}` },
     });
+  };
+
+  const clap = async (e) => {
+    e.preventDefault();
+    setClaps(claps + 1);
+    await Axios.post(`${process.env.REACT_APP_API_URL}/claps/${post.id}`);
   };
 
   return (
@@ -33,6 +43,10 @@ export const Post: React.FC<Props> = ({ post }) => {
       {post.author && <ByLine post={post as PostType} />}
       <img src={post.imageUrl} alt="" />
       <div>{ReactHtmlParser(post.body)}</div>
+      <div className="claps" onClick={(e) => clap(e)}>
+        <img src="https://topmediumstories.com/clap.png" alt="" />
+        <span>{claps}</span>
+      </div>
       {isAdmin && (
         <Button buttonType="delete" onClick={(e) => deletePost(e)}>
           Delete Post

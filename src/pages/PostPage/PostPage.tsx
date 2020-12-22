@@ -26,9 +26,14 @@ export const PostPage: React.FC<Props> = () => {
     };
     getPost();
   }, [postId, setPost]);
+
   return (
     <div>
-      <Post post={post}></Post>
+      {post ? (
+        <Post post={post} />
+      ) : (
+        <img src="https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" />
+      )}
     </div>
   );
 };

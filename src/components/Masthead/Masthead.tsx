@@ -9,8 +9,8 @@ interface Props {}
 
 export const Masthead: React.FC<Props> = () => {
   const { currentUser } = useContext(UserContext);
-  console.log({ currentUser });
   const isAdmin = isUserAdmin(currentUser);
+
   return (
     <div className="masthead">
       <Link to="/posts" className="masthead__title">

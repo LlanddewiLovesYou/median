@@ -1,8 +1,5 @@
 import React, { useState, useContext } from "react";
-import Axios from "axios";
-import { setJWT } from "../../util/jwt";
-import { useHistory } from "react-router-dom";
-import { UserContext } from "../../context/UserContext";
+import { useUserSubmit } from "../../hooks/useUserSubmit";
 import { Button } from "../Button/Button";
 
 import "./UserForm.scss";
@@ -12,11 +9,6 @@ interface Props {
 }
 
 export const UserForm: React.FC<Props> = ({ type }) => {
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const history = useHistory();
-  const { setCurrentUser, setLoggedIn } = useContext(UserContext);
-
   let formText;
   let buttonText;
   let submitUrl;
@@ -34,26 +26,20 @@ export const UserForm: React.FC<Props> = ({ type }) => {
       break;
   }
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const user = await Axios.post(submitUrl, { userName, password });
-      console.log({ user });
-      if (user.data) {
-        setLoggedIn(true);
-        setCurrentUser(user.data.currentUser);
-        setJWT(user.data.accessToken);
-        history.push("/posts");
-      }
-    } catch (e) {
-      return e.message;
-    }
-  };
+  const {
+    onSubmit,
+    error,
+    setUserName,
+    userName,
+    setPassword,
+    password,
+  } = useUserSubmit(submitUrl);
 
   return (
     <div className="user-form">
       <form onSubmit={(e) => onSubmit(e)}>
         <div>{formText}</div>
+        <div className={`error ${error ? "visible" : null}`}>{error}</div>
         <label htmlFor="username">
           Username
           <input

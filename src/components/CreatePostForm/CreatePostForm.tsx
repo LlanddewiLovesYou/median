@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Button } from "../Button/Button";
+import { PostPreviewContext } from "context/PostPreviewContext";
 import { getJWT } from "../../util/jwt";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
@@ -10,7 +11,6 @@ import draftToHtml from "draftjs-to-html";
 import htmlWordCount from "html-word-count";
 import "../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "./CreatePostForm.scss";
-import { PostPreviewContext } from "context/PostPreviewContext";
 
 interface Props {}
 
@@ -47,6 +47,7 @@ export const CreatePostForm: React.FC<Props> = (props) => {
       id,
       body,
       author: "Ian Del Duca",
+      claps: 0,
       title,
       subtitle,
       imageUrl,

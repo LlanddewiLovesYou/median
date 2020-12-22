@@ -1,6 +1,7 @@
 import { ByLine } from "components/ByLine/ByLine";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { isUserAdmin } from "util/permissions";
 import { UserContext } from "../../context/UserContext";
 import "./Masthead.scss";
 
@@ -8,6 +9,8 @@ interface Props {}
 
 export const Masthead: React.FC<Props> = () => {
   const { currentUser } = useContext(UserContext);
+  console.log({ currentUser });
+  const isAdmin = isUserAdmin(currentUser);
   return (
     <div className="masthead">
       <Link to="/posts" className="masthead__title">
@@ -25,7 +28,7 @@ export const Masthead: React.FC<Props> = () => {
           </Link>
         )}
         {currentUser && `Welcome, ${currentUser.userName}`}
-        {currentUser && currentUser.permissions === "admin" && (
+        {currentUser && isAdmin && (
           <Link to="/posts/create" className="masthead__link">
             Create Post
           </Link>

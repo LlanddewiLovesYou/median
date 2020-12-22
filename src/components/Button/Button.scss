@@ -14,6 +14,11 @@
     color: white;
     background-color: black;
     justify-self: center;
-    width: 50%;
+    // width: 50%;
+  }
+  &__delete {
+    color: white;
+    background-color: red;
+    border: none;
   }
 }

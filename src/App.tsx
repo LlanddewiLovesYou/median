@@ -12,6 +12,7 @@ import { PostsContext } from "./context/PostsContext";
 import { UserContext } from "./context/UserContext";
 import "./App.css";
 import { ProtectedRoute } from "components/ProtectedRoute/ProtectedRoute";
+import { PostPage } from "pages/PostPage/PostPage";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -67,7 +68,7 @@ function App() {
                 <CreatePostPage />
               </ProtectedRoute>
               <Route path="/posts/:id">
-                <Post />
+                <PostPage />
               </Route>
               <ProtectedRoute
                 path="/developement"

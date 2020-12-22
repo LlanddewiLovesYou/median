@@ -1,37 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Post as PostType } from "../../types/Post";
 import { ByLine } from "../ByLine/ByLine";
-
-import { getPostIdFromPath } from "../../util/params";
-
-import { useLocation } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-import Axios from "axios";
 import "./Post.scss";
 
-interface Props {}
+interface Props {
+  post: any;
+}
 
-export const Post: React.FC<Props> = () => {
-  const [post, setPost] = useState({
-    title: "",
-    subtitle: "",
-    author: "",
-    imageUrl: "",
-    body: "",
-  });
-  const path = useLocation().pathname;
-  const postId = getPostIdFromPath(path);
-
-  useEffect(() => {
-    const getPost = async () => {
-      const requestedPost = await Axios.get(
-        `${process.env.REACT_APP_API_URL}/posts/${postId}`
-      );
-      setPost(requestedPost.data[0]);
-    };
-    getPost();
-  }, [postId, setPost]);
-
+export const Post: React.FC<Props> = ({ post }) => {
   return (
     <div className="post">
       <h1>{post.title}</h1>

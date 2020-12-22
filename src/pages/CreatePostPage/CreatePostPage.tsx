@@ -7,11 +7,16 @@ import "./CreatePostPage.scss";
 interface Props {}
 
 export const CreatePostPage: React.FC<Props> = () => {
-  const [postPreview, setPostPreview] = useState({});
+  const [postPreview, setPostPreview] = useState(undefined);
   return (
-    <div>
-      <PostPreviewContext.Provider value={{}}>
-        <Post post={postPreview}></Post>
+    <div className="create-post-page">
+      <PostPreviewContext.Provider value={{ setPostPreview }}>
+        {postPreview && (
+          <div className="preview">
+            <span className="prev-text">PREVIEW</span>
+            <Post post={postPreview} className="post"></Post>
+          </div>
+        )}
         <CreatePostForm />
       </PostPreviewContext.Provider>
     </div>

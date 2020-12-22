@@ -32,4 +32,8 @@
   button {
     margin-top: 30px;
   }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
 }

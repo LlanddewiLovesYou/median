@@ -1,3 +1,9 @@
 import React from "react";
 
-export const PostPreviewContext = React.createContext({});
+interface PostPreviewContext {
+  setPostPreview?: any;
+}
+
+export const PostPreviewContext = React.createContext<PostPreviewContext>({
+  setPostPreview: () => {},
+});

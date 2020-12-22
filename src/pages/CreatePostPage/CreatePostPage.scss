@@ -1,2 +1,24 @@
 .create-post-page {
+  margin: 30px;
+  .preview {
+    border: 1px dotted grey;
+    // color: red;
+    border-radius: 5px;
+    font-family: "Saira Stencil One";
+    // display: flex;
+    // flex-direction: column;
+    position: relative;
+    .prev-text {
+      color: red;
+      position: absolute;
+      font-size: 30px;
+      opacity: 0.1;
+      transform: rotate(-20deg);
+      left: 10%;
+      top: 50px;
+      z-index: 10;
+    }
+    .post {
+    }
+  }
 }

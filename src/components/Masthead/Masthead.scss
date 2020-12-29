@@ -3,7 +3,6 @@
 .masthead {
   display: flex;
   justify-content: space-between;
-  font-family: "Martel Sans";
   height: 65px;
   align-items: center;
   &__title {
@@ -25,7 +24,7 @@
   }
   &__link {
     color: white;
-    background-color: dodgerblue;
+    background-color: green;
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 5px;

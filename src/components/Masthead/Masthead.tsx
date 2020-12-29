@@ -30,7 +30,7 @@ export const Masthead: React.FC<Props> = () => {
         {currentUser && `Welcome, ${currentUser.userName}`}
         {currentUser && isAdmin && (
           <Link to="/posts/create" className="masthead__link">
-            Create Post
+            Write
           </Link>
         )}
       </div>

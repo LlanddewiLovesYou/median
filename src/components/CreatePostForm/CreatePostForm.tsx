@@ -11,6 +11,7 @@ import draftToHtml from "draftjs-to-html";
 import htmlWordCount from "html-word-count";
 import "../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import "./CreatePostForm.scss";
+import { UserContext } from "context/UserContext";
 
 interface Props {}
 
@@ -31,6 +32,7 @@ export const CreatePostForm: React.FC<Props> = (props) => {
   const [imageUrl, setImageUrl] = useState("");
   const history = useHistory();
   const { setPostPreview } = useContext(PostPreviewContext);
+  const { currentUser } = useContext(UserContext);
 
   const convertRawToHTML = (editorState) => {
     const raw = convertToRaw(editorState.getCurrentContent());
@@ -46,7 +48,7 @@ export const CreatePostForm: React.FC<Props> = (props) => {
     const post = {
       id,
       body,
-      author: "Ian Del Duca",
+      author: currentUser.userName,
       claps: 0,
       title,
       subtitle,
@@ -67,7 +69,7 @@ export const CreatePostForm: React.FC<Props> = (props) => {
     const post = {
       id: createKebabId(title),
       body,
-      author: "Ian Del Duca",
+      author: currentUser.userName,
       title,
       subtitle,
       imageUrl,

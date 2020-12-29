@@ -37,7 +37,7 @@ function App() {
       );
       setComments(commentsResponse.data);
     },
-    [setComments, comments]
+    [setComments]
   );
 
   const validateUser = useCallback(async (jwt) => {

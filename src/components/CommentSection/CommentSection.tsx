@@ -37,7 +37,7 @@ export const CommentSection: React.FC<Props> = () => {
         }
       );
       setText("");
-      comments.shift(commentResponse.data);
+      await getComments(postId);
     }
   };
 

@@ -1,6 +1,5 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import { useUserSubmit } from "../../hooks/useUserSubmit";
-import { Button } from "../Button/Button";
 
 import "./UserForm.scss";
 
@@ -39,7 +38,7 @@ export const UserForm: React.FC<Props> = ({ type }) => {
     <div className="user-form">
       <form onSubmit={(e) => onSubmit(e)}>
         <div>{formText}</div>
-        <div className={`error ${error ? "visible" : null}`}>{error}</div>
+        <div className={`error ${error ? "visible" : ""}`}>{error}</div>
         <label htmlFor="username">
           Username
           <input
@@ -56,9 +55,7 @@ export const UserForm: React.FC<Props> = ({ type }) => {
             value={password}
           />
         </label>
-        <Button buttonType="user" type="submit">
-          {buttonText}
-        </Button>
+        <button type="submit">{buttonText}</button>
       </form>
     </div>
   );

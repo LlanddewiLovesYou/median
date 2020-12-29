@@ -1,0 +1,51 @@
+.comment-section {
+  position: fixed;
+  left: 100%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: white;
+  width: 400px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  border-bottom: 1px dotted gray;
+  transition: 0.5s;
+
+  .header {
+    font-family: "Roboto";
+    font-size: 20px;
+    padding: 24px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .close {
+    height: 25px;
+    width: 25px;
+    align-self: flex-end;
+    margin-right: 30px;
+  }
+  .comments {
+    .comment {
+      border-bottom: 1px dotted gray;
+    }
+    .comment:last-child {
+      border-bottom: none;
+    }
+  }
+  input {
+    width: 80%;
+    align-self: center;
+    padding: 15px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 8px;
+    margin-bottom: 10px;
+  }
+}
+
+.comment-section.enter {
+  transform: translateX(-100%);
+  transition: 0.5s;
+}

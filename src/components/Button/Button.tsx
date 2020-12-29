@@ -4,7 +4,7 @@ import "./Button.scss";
 interface Props {
   buttonType: string;
   type?: any;
-  onClick?: () => {};
+  onClick?: any;
 }
 
 export const Button: React.FC<Props> = ({

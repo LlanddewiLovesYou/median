@@ -10,7 +10,12 @@ export const ByLine: React.FC<Props> = ({ post }) => {
   const { updatedAt, readTime, author } = post;
   return (
     <div className="by-line">
-      <span className="by-line__placeholder">ID</span>
+      <img
+        src="https://recap-project.eu/wp-content/uploads/2017/02/default-user-300x300.jpg"
+        alt=""
+        className="by-line__avatar"
+      />
+      {/* <span className="by-line__placeholder">ID</span> */}
       <div className="by-line__data">
         <div>{author}</div>
         <div className="by-line__data-secondline">

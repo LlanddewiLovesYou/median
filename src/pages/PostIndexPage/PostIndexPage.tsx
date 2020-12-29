@@ -13,7 +13,11 @@ export const PostIndexPage = () => {
   return (
     <div className="post-index-page">
       {posts.map((post) => {
-        return <PostPreview post={post} />;
+        return (
+          <div className="preview">
+            <PostPreview post={post} />
+          </div>
+        );
       })}
     </div>
   );

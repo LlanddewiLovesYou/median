@@ -5,18 +5,20 @@
   font-style: unset;
   text-decoration: none;
   font-family: "Roboto";
-  width: 675px;
+  width: 50%;
   display: flex;
   color: black;
   justify-content: space-between;
+  align-items: center;
   h1 {
-    font-size: 22px;
+    font-size: 16px;
     margin: 4px 0;
+    font-weight: 500;
   }
   h3 {
-    margin: 4px 0;
     font-size: 16px;
-    font-weight: 500;
+    margin: 4px 0;
+    font-weight: 300;
     color: $gray-1;
   }
   &__separator {
@@ -27,19 +29,20 @@
     font-size: 13px;
     margin: 5px 0;
   }
-  &__placeholder {
-    color: white;
-    background-color: cornflowerblue;
-    border-radius: 100%;
-    padding: 5px 7px;
+  &__avatar {
+    height: 25px;
+    width: 25px;
     margin-right: 5px;
   }
   &__author {
-    margin: 15px 0;
     font-size: 13px;
+    font-weight: 500;
+    display: flex;
+
+    align-items: center;
   }
-  img {
-    width: 200px;
-    height: 135px;
+  .thumbnail {
+    width: 150px;
+    height: 115px;
   }
 }

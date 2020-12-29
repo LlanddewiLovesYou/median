@@ -12,7 +12,11 @@ export const PostPreview: React.FC<Props> = ({ post }) => {
     <Link to={`/posts/${post.id}`} className="post-preview">
       <div>
         <div className="post-preview__author">
-          <span className="placeholder post-preview__placeholder">ID</span>
+          <img
+            src="https://recap-project.eu/wp-content/uploads/2017/02/default-user-300x300.jpg"
+            alt=""
+            className="post-preview__avatar"
+          />
           {post.author}
         </div>
         <h1>{post.title}</h1>
@@ -25,7 +29,7 @@ export const PostPreview: React.FC<Props> = ({ post }) => {
           {post.readTime ? <span>{post.readTime}m</span> : null}
         </div>
       </div>
-      <img src={post.imageUrl} alt="" />
+      <img src={post.imageUrl} alt="" className="thumbnail" />
     </Link>
   );
 };

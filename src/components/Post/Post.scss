@@ -6,7 +6,7 @@
   font-family: "Castoro";
   font-weight: 500;
   margin: 0 20%;
-  margin-top: 42px;
+  padding-top: 42px;
   margin-bottom: 30px;
   h1 {
     font-size: 40px;
@@ -26,13 +26,20 @@
     color: $gray-2;
     margin: 42px 0;
   }
-  img {
+
+  &__image {
     width: 100%;
   }
 
-  .claps {
+  .engagment {
+    display: flex;
+  }
+
+  .claps,
+  .comments {
     display: flex;
     margin-bottom: 30px;
+    margin-right: 20px;
     align-items: center;
     img {
       height: 30px;

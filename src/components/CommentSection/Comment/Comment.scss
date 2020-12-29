@@ -1,0 +1,32 @@
+@import "colors.scss";
+
+.comment {
+  font-family: "Roboto";
+  margin-left: 30px;
+  margin-top: 20px;
+  font-weight: 300;
+
+  .text {
+    font-size: 14px;
+    padding: 25px 0px;
+  }
+  .avatar {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+  }
+  .username {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    div {
+      font-size: 14px;
+      div {
+        color: $gray-1;
+      }
+    }
+  }
+  input {
+    margin: 0 10px;
+  }
+}

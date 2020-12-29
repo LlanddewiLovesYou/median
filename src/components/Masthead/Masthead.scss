@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   font-family: "Martel Sans";
-  margin-top: 20px;
+  height: 65px;
   align-items: center;
   &__title {
     font-family: "DM Serif Display";
@@ -15,6 +15,7 @@
   }
   &__login {
     margin-right: 125px;
+    font-weight: 300;
     .button {
       color: black;
       text-decoration: none;

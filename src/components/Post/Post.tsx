@@ -8,6 +8,7 @@ import { UserContext } from "context/UserContext";
 import { isUserAdmin } from "util/permissions";
 import { getJWT } from "../../util/jwt";
 import Axios from "axios";
+import { CommentsContext } from "context/CommentsContext";
 
 interface Props {
   post: any;
@@ -15,6 +16,7 @@ interface Props {
 
 export const Post: React.FC<Props> = ({ post }) => {
   const { currentUser } = useContext(UserContext);
+  const { comments, setCommentsOpen } = useContext(CommentsContext);
   const [claps, setClaps] = useState(0);
   const isAdmin = isUserAdmin(currentUser);
   const jwt = getJWT();
@@ -41,11 +43,20 @@ export const Post: React.FC<Props> = ({ post }) => {
       <h1>{post.title}</h1>
       <h3 className="">{post.subtitle}</h3>
       {post.author && <ByLine post={post as PostType} />}
-      <img src={post.imageUrl} alt="" />
+      <img src={post.imageUrl} alt="" className="post__image" />
       <div>{ReactHtmlParser(post.body)}</div>
-      <div className="claps" onClick={(e) => clap(e)}>
-        <img src="https://topmediumstories.com/clap.png" alt="" />
-        <span>{claps}</span>
+      <div className="engagment">
+        <div className="claps" onClick={(e) => clap(e)}>
+          <img src="https://topmediumstories.com/clap.png" alt="" />
+          <span>{claps}</span>
+        </div>
+        <div className="comments" onClick={() => setCommentsOpen(true)}>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrnRVoTTYHiFVSdYE48UCxzveyW9EMPFgHWA&usqp=CAU"
+            alt=""
+          />
+          <span>{comments.length}</span>
+        </div>
       </div>
       {isAdmin && (
         <Button buttonType="delete" onClick={(e) => deletePost(e)}>

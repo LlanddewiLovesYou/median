@@ -15,9 +15,19 @@ import { UserContext } from "context/UserContext";
 
 interface Props {}
 
+const removePunctuationFromId = (title) => {
+  const marks = [".", ",", "?", "!"];
+  const chars = title.split("");
+  const noPunc = chars.filter((char) => {
+    return !marks.includes(char);
+  });
+  return noPunc.join("");
+};
+
 const createKebabId = (title) => {
   const arr = [];
-  const words = title.split(" ");
+  const noPunc = removePunctuationFromId(title);
+  const words = noPunc.split(" ");
   words.forEach((word, i) => {
     arr.push(word.toLowerCase());
     if (i !== words.length - 1) arr.push("-");

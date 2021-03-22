@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Post } from "../../components/Post/Post";
-import { CommentSection } from "../../components/CommentSection/CommentSection";
 import Axios from "axios";
 import { useLocation } from "react-router-dom";
 import { getPostIdFromPath } from "../../util/params";
+import "./PostPage.scss";
 
 interface Props {}
 
@@ -29,12 +29,14 @@ export const PostPage: React.FC<Props> = () => {
   }, [postId, setPost]);
 
   return (
-    <div>
-      {/* <CommentSection /> */}
+    <div className="post-page">
       {post ? (
         <Post post={post} />
       ) : (
-        <img src="https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" />
+        <img
+          src="https://media0.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
+          className="spinner"
+        />
       )}
     </div>
   );

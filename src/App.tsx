@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Axios from "axios";
 import { getJWT } from "./util/jwt";
 import { Masthead } from "components/Masthead/Masthead";
@@ -61,7 +61,7 @@ function App() {
   }, [setLoggedIn, setCurrentUser, validateUser, jwt]);
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <div className="App">
         <UserContext.Provider
           value={{ currentUser, setCurrentUser, setLoggedIn, loggedIn }}
